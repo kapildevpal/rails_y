@@ -1,0 +1,21 @@
+<p>Please Fill Form below</p>
+
+<%#----This is for error display--%>
+ <%if @ad.errors.any?%>
+   <%@ad.errors.full_messages.each do |message|%>  
+   <%=message%>
+   <%end%>
+     <%end%>
+<%#------------------------------%>
+
+<%= form_with model: @ad do |form| %>
+  
+<div>
+  <%=form.label :account_no%><br>
+
+  <%=form.text_field :account_no%><br>
+<%=form.label :account_holder_name%><br>
+<%=form.text_field :account_holder_name%><br>
+<%=form.submit%>
+</div>
+<% end %>
