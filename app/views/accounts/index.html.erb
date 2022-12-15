@@ -3,8 +3,12 @@
 <%@ads.each do |x|%>
 <li>
 <%= link_to  x.account_no, x %>
+ 
+          
 </li>
+
+  
 <%end%>
 <%=render "common"%>
-<%#=link_to "Click Here", account_url%>
+<%=link_to "Click Here", new_account_path%>
 

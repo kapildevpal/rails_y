@@ -1,6 +1,11 @@
 <p>Account Details</p>
 <p>Account NO :<%= @ad.account_no%></p>
 <span>Account Holder Name :<%= @ad.account_holder_name%></span>
-<%=link_to "delete", destroy_account_path(@ad) %>
-
+<%=link_to "click", accounts_path(@ads) %>
+ <%= link_to 'Destroy', accounts_path, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
 <%=render "common"%>
+
+ 

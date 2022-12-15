@@ -5,6 +5,7 @@ class AccountsController < ApplicationController
   end
   def show
     @ad =Account.find(params[:id])
+   
   end
   def new
     @ad=Account.new
@@ -16,12 +17,12 @@ class AccountsController < ApplicationController
        else
          render :new, status: :unprocessable_entity
       end
-    def destroy
+  def destroy
+     @ad=Account.find(params[:id])
+     @ad.destroy
       
-      @ad=Account.find(params[:id])
-      @ad.destroy
-
-    end
+     redirect_to root_path, status: :see_other
+  end
   end
   private
   def account_params
